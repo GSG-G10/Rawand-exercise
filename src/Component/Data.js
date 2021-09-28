@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Pagination,Card } from 'antd';
 import 'antd/dist/antd.css'
-
+import './Data.css'
 function Data() {
     const[data,setData]=useState("")
     const[click,setClicked]=useState(1)
@@ -21,7 +21,7 @@ function Data() {
       
 return(
     <div>
-     <Pagination defaultCurrent={1} total={100} onChange={onChange} />
+     
      <div>
 
      <Card title="Card Title">
@@ -30,11 +30,12 @@ return(
     published_at: {data.published_at}
     </Card.Grid>
     <Card.Grid style={gridStyle}>total_photos: {data.total_photos}</Card.Grid>
-    <Card.Grid style={gridStyle}>type: {data.tags[0].type}</Card.Grid>
+    {/* <Card.Grid style={gridStyle}>type: {data.tags[0].type}</Card.Grid> */}
    
   </Card>
        
      </div>
+     <Pagination defaultCurrent={1} total={100} onChange={onChange} />
     </div>
 )
 }
